@@ -414,3 +414,67 @@ button:focus-visible {
   outline: 2px solid var(--phosphor);
   outline-offset: 2px;
 }
+
+/* ===========================================
+   SCROLL-TRIGGERED REVEAL
+   =========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger paragraphs slightly within the same prose block */
+.prose p.reveal {
+  transition-delay: 0.05s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ===========================================
+   CUSTOM CURSOR
+   Desktop/fine-pointer only — see script.js gate.
+   Real OS cursor stays visible underneath; this is
+   a companion dot, not a replacement, so nothing
+   breaks if JS fails to load.
+   =========================================== */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: var(--phosphor);
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  mix-blend-mode: multiply;
+  transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.cursor-dot--active {
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  margin-top: -14px;
+  background: transparent;
+  border: 1.5px solid var(--phosphor);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot { display: none; }
+}
