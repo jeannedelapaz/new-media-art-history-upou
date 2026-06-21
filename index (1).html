@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Brief History of New Media Art — Interactive</title>
+<meta name="description" content="An interactive journey through four decades of New Media Art — from Bell Labs in 1962 to the birth of Net Art in 1997.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== STICKY DECADE NAV (signature element: VU meter / tape counter) ===== -->
+<nav class="decade-rail" aria-label="Decade navigation">
+  <div class="rail-track">
+    <div class="rail-fill" id="railFill"></div>
+  </div>
+  <ul class="rail-stops">
+    <li><a href="#hero" class="rail-stop" data-stop="hero" aria-label="Top"><span class="rail-dot"></span></a></li>
+    <li><a href="#sixties" class="rail-stop" data-stop="sixties"><span class="rail-dot"></span><span class="rail-label">60s</span></a></li>
+    <li><a href="#seventies" class="rail-stop" data-stop="seventies"><span class="rail-dot"></span><span class="rail-label">70s</span></a></li>
+    <li><a href="#eighties" class="rail-stop" data-stop="eighties"><span class="rail-dot"></span><span class="rail-label">80s</span></a></li>
+    <li><a href="#nineties" class="rail-stop" data-stop="nineties"><span class="rail-dot"></span><span class="rail-label">90s</span></a></li>
+    <li><a href="#closing" class="rail-stop" data-stop="closing" aria-label="End"><span class="rail-dot"></span></a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ===== 1. HERO ===== -->
+  <section id="hero" class="section hero">
+    <div class="hero-inner">
+      <p class="kicker">The history of new media art</p>
+      <h1 class="hero-headline">Art fell in love with the machine.<br>The art world wasn't ready.</h1>
+      <p class="hero-sub">From self-destructing sculptures in 1960 to glitchy internet art in 1997 — this is the 40-year story of artists who refused to wait for permission to use new technology.</p>
+      <a href="#setup" class="scroll-cue" aria-label="Scroll to begin">
+        <span>Scroll to begin</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v11M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 2. SETUP ===== -->
+  <section id="setup" class="section setup">
+    <div class="content-block">
+      <p class="kicker">The short version</p>
+      <div class="prose">
+        <p>Here's the thing nobody tells you about technology and art: they've been trying to date since the 1960s, and it almost never works out.</p>
+        <p>Every decade, a new wave of artists grabs whatever tech is lying around — mainframes, satellites, robots, the early internet — and tries to make it part of the art world. And almost every time, the art world says <em>interesting, but not for us</em> and quietly closes the door.</p>
+        <p>So the artists do something else: they build their own world. Their own galleries, their own festivals, their own museums, their own rules. Decade after decade, this happens again — until "New Media Art" stops being a phase and becomes its own entire universe, running in parallel to the art world everyone already knows.</p>
+        <p>This is that story. Four decades, four very different attempts to make tech and art work — and what happened each time they tried.</p>
+        <p class="transition-line">It starts, like most love stories, with someone walking into a lab.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. SIXTIES ===== -->
+  <section id="sixties" class="section decade" data-decade="sixties">
+    <div class="content-block">
+      <p class="kicker">1960 – 1969</p>
+      <h2 class="decade-headline">When artists and engineers fell in love</h2>
+      <div class="prose">
+        <p>Picture a Bell Labs engineer in 1962, alone at a mainframe the size of a room, making abstract art on a machine built for missile calculations. Nobody asked him to. He just wanted to see what would happen.</p>
+        <p>That's the sixties in a sentence: a brief, electric moment when artists, scientists, and engineers all wanted the same thing — to see what art and technology could do together — and nobody told them to stop.</p>
+        <p>Sculptures that destroyed themselves. Robots that responded to your voice. A gallery in London that put a computer next to a Bridget Riley painting like it was the most normal thing in the world. For about ten years, the art world was wide open to anyone curious enough to plug something in.</p>
+        <p>It wouldn't last. But while it did, it changed everything that came after.</p>
+        <p class="transition-line">Here's where it happened — click any moment to see it.</p>
+      </div>
+
+      <div class="timeline" role="list">
+        <button class="timeline-card" data-card="s1" aria-expanded="false">
+          <span class="card-year">1962</span>
+          <span class="card-title">The first computer art</span>
+        </button>
+        <button class="timeline-card" data-card="s2" aria-expanded="false">
+          <span class="card-year">1966</span>
+          <span class="card-title">Artists hijack engineering</span>
+        </button>
+        <button class="timeline-card" data-card="s3" aria-expanded="false">
+          <span class="card-year">1968</span>
+          <span class="card-title">The show that proved it could work</span>
+        </button>
+        <button class="timeline-card" data-card="s4" aria-expanded="false">
+          <span class="card-year">1970</span>
+          <span class="card-title">Art and tech get an HQ</span>
+        </button>
+      </div>
+
+      <!-- Detail panels -->
+      <div class="card-detail" id="detail-s1" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="A. Michael Noll, early computer-generated work, Bell Labs, 1962"></div>
+        <h3>1962 — The first computer art</h3>
+        <p>An engineer at Bell Labs named A. Michael Noll starts making abstract images with a mainframe — using math, not a paintbrush. It's clumsy, it's experimental, and it's the literal birth of computer art.</p>
+      </div>
+      <div class="card-detail" id="detail-s2" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="9 Evenings: Theatre and Engineering, NYC Armory, 1966"></div>
+        <h3>1966 — Artists hijack engineering</h3>
+        <p>Billy Klüver, an engineer who fell in love with the art world, organizes <em>9 Evenings: Theatre and Engineering</em> — ten artists, thirty engineers, one wild week of performances nobody had ever seen before.</p>
+      </div>
+      <div class="card-detail" id="detail-s3" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Cybernetic Serendipity, ICA London, 1968"></div>
+        <h3>1968 — The show that proved it could work</h3>
+        <p><em>Cybernetic Serendipity</em> opens in London — part art exhibit, part science fair, part fever dream. Robots, computer-generated poetry, and painting machines, all under one roof. It's still considered one of the most important tech-art shows ever staged.</p>
+      </div>
+      <div class="card-detail" id="detail-s4" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Pepsi Pavilion, Expo '70, Osaka — built by E.A.T."></div>
+        <h3>1970 — Art and tech get an HQ</h3>
+        <p>E.A.T. (Experiments in Art and Technology) — the group Klüver founded — builds the Pepsi Pavilion for Expo '70 in Osaka: an immersive dome a decade ahead of its time. This is basically virtual reality, in 1970.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. SEVENTIES ===== -->
+  <section id="seventies" class="section decade" data-decade="seventies">
+    <div class="content-block">
+      <p class="kicker">1970 – 1979</p>
+      <h2 class="decade-headline">The art world closed the door. So they built a basement.</h2>
+      <div class="prose">
+        <p>The sixties ended with a hangover. The Vietnam War made "technology" a dirty word in art circles — Richard Serra literally said tech was tied to violence abroad and at home. Computers were still expensive, bulky, and impossible to access unless you worked at a university or a lab. The party was over.</p>
+        <p>But here's what's interesting: the work didn't stop. It just went underground.</p>
+        <p>While the official art world moved on, a strange, scrappy mix of engineers, hackers, musicians, and dropouts kept experimenting — usually after-hours, usually uninvited, usually for free. A NASA-trained scientist made music with a homemade computer and ended up jamming with the Grateful Dead. A robot learned to respond to human voices and movement, funded by a lighting company. An artificial intelligence taught itself to paint, decades before "AI art" was a phrase anyone used.</p>
+        <p>None of this happened in galleries. It happened in labs, basements, and university departments most art critics never set foot in.</p>
+        <p class="transition-line">This is where the underground decade actually happened.</p>
+      </div>
+
+      <div class="timeline" role="list">
+        <button class="timeline-card" data-card="v1" aria-expanded="false">
+          <span class="card-year">1971</span>
+          <span class="card-title">The internet is born</span>
+        </button>
+        <button class="timeline-card" data-card="v2" aria-expanded="false">
+          <span class="card-year">1973</span>
+          <span class="card-title">A machine learns to paint</span>
+        </button>
+        <button class="timeline-card" data-card="v3" aria-expanded="false">
+          <span class="card-year">1974</span>
+          <span class="card-title">A robot that notices you</span>
+        </button>
+        <button class="timeline-card" data-card="v4" aria-expanded="false">
+          <span class="card-year">1977</span>
+          <span class="card-title">Apple II hits homes</span>
+        </button>
+      </div>
+
+      <div class="card-detail" id="detail-v1" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Early ARPANET network map, early 1970s"></div>
+        <h3>1971 — The internet is born</h3>
+        <p>Computers start talking to each other for the first time, thanks to a new shared protocol. Nobody knows it yet, but this is the plumbing that every future internet artwork will run through.</p>
+      </div>
+      <div class="card-detail" id="detail-v2" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="AARON output, Harold Cohen, 1970s"></div>
+        <h3>1973 — A machine learns to paint</h3>
+        <p>Artist Harold Cohen starts building AARON, a program designed to make its own artistic decisions. It's one of the earliest serious attempts at what we'd now call AI-generated art — 50 years before the term went mainstream.</p>
+      </div>
+      <div class="card-detail" id="detail-v3" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="The Senster, Edward Ihnatowicz, Philips Evoluon, 1970"></div>
+        <h3>1974 — A robot that notices you</h3>
+        <p>In London, engineer Edward Ihnatowicz finishes <em>The Senster</em> — a giant aluminum sculpture, funded by Philips, that physically reacts to people's voices and movement. It's part robot, part artwork, and entirely ahead of its time.</p>
+      </div>
+      <div class="card-detail" id="detail-v4" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Apple II, 1977 launch"></div>
+        <h3>1977 — Apple II hits homes</h3>
+        <p>Personal computers start showing up in regular households for the first time. This is the quiet moment that makes everything in the next two decades possible — art included.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. EIGHTIES ===== -->
+  <section id="eighties" class="section decade" data-decade="eighties">
+    <div class="content-block">
+      <p class="kicker">1980 – 1989</p>
+      <h2 class="decade-headline">Before the internet, they invented video calls anyway</h2>
+      <div class="prose">
+        <p>Forget what you think you know about the eighties. While everyone remembers neon and synth-pop, a small group of artists were quietly inventing things we now take completely for granted — decades before the technology to do it properly even existed.</p>
+        <p>In 1980, two artists connected two cities — New York and Los Angeles — with a live video feed on giant public screens. Strangers three thousand miles apart could see each other, wave, dance, flirt. People on the sidewalk had no idea it was art. It's since been called "the mother of all video chats." This was 14 years before anyone had a webcam at home.</p>
+        <p>Four years later, Nam June Paik beamed a satellite broadcast of live art performances into homes around the world — ten million people watched. No livestream, no internet, just sheer audacity and a satellite link.</p>
+        <p>This was also the decade New Media Art finally got a permanent home: a festival in a small Austrian city called Linz. It wasn't fancy. It started as a music symposium. But Ars Electronica would go on to become the single most important meeting point this art world ever had — and it's still running today.</p>
+        <p>Meanwhile, Macintosh computers brought the mouse and the graphic interface into homes, arcade games turned into a billion-dollar industry, and a strange new subculture — cyberpunk — started imagining the future this was all building toward.</p>
+        <p class="transition-line">Here's how the decade unfolded.</p>
+      </div>
+
+      <div class="timeline" role="list">
+        <button class="timeline-card" data-card="e1" aria-expanded="false">
+          <span class="card-year">1980</span>
+          <span class="card-title">The first video call (sort of)</span>
+        </button>
+        <button class="timeline-card" data-card="e2" aria-expanded="false">
+          <span class="card-year">1979</span>
+          <span class="card-title">A festival begins, almost by accident</span>
+        </button>
+        <button class="timeline-card" data-card="e3" aria-expanded="false">
+          <span class="card-year">1984</span>
+          <span class="card-title">Ten million people watch a satellite artwork</span>
+        </button>
+        <button class="timeline-card" data-card="e4" aria-expanded="false">
+          <span class="card-year">1984</span>
+          <span class="card-title">The Macintosh changes everything</span>
+        </button>
+      </div>
+
+      <div class="card-detail" id="detail-e1" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Hole-in-Space, Kit Galloway &amp; Sherrie Rabinowitz, 1980"></div>
+        <h3>1980 — The first video call (sort of)</h3>
+        <p><em>Hole-in-Space</em> connects strangers in New York and LA through live video on public screens — no warning, no explanation. People just start talking to each other across the country, live, for the first time ever.</p>
+      </div>
+      <div class="card-detail" id="detail-e2" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Ars Electronica festival, Linz, Austria"></div>
+        <h3>1979 — A festival begins, almost by accident</h3>
+        <p>What starts as a small Austrian music symposium becomes Ars Electronica — the festival that will define New Media Art for the next 40+ years and is still running today.</p>
+      </div>
+      <div class="card-detail" id="detail-e3" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Good Morning Mr. Orwell, Nam June Paik, 1984"></div>
+        <h3>1984 — Ten million people watch a satellite artwork</h3>
+        <p>Nam June Paik's <em>Good Morning Mr. Orwell</em> broadcasts live performances via satellite to audiences across continents — one of the largest audiences any artwork has ever reached in real time.</p>
+      </div>
+      <div class="card-detail" id="detail-e4" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Original Macintosh, 1984"></div>
+        <h3>1984 — The Macintosh changes everything</h3>
+        <p>Apple releases the Macintosh: mouse, graphic interface, the first computer that didn't require you to be an engineer to use it. This is the moment "using a computer" stops being a specialist skill.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. EARLY NINETIES ===== -->
+  <section id="nineties" class="section decade" data-decade="nineties">
+    <div class="content-block">
+      <p class="kicker">1989 – 1997</p>
+      <h2 class="decade-headline">They finally got their own museum. Then everything changed again.</h2>
+      <div class="prose">
+        <p>1989 was a turning point — and not just for New Media Art. The Berlin Wall fell. The Soviet Union began to collapse. And in Germany, a new kind of institution was being built: ZKM, a museum designed specifically for media art, the first of its kind anywhere in the world.</p>
+        <p>For the first time in 30 years, this art finally had a real home. Museums. Festivals. Research labs. A whole support system, built from scratch, spreading across Europe — and, after the fall of communism, into Eastern Europe too, where artists who'd been working in squats and private apartments suddenly had access to actual institutions for the first time.</p>
+        <p>It looked like the happy ending. It wasn't quite.</p>
+        <p>Because while all this was being built, something else was happening completely outside of it: the World Wide Web. And once ordinary people could get online — no engineering degree required — an entirely new kind of artist showed up. Painters, photographers, filmmakers who'd never touched a mainframe in their life started making art <em>on</em> the internet itself. They called it Net Art, and it had almost nothing to do with the museums, labs, and festivals that had just spent a decade building themselves a home.</p>
+        <p>In 1997, both worlds ended up on the same stage at an awards ceremony — a Net Art collective in matching orange jackets, standing next to a Pixar director, both winners, both completely unsure what they had in common. That photo says everything: New Media Art had finally arrived. And it had just split in two.</p>
+        <p class="transition-line">Here's how it all came together — and split apart.</p>
+      </div>
+
+      <div class="timeline" role="list">
+        <button class="timeline-card" data-card="n1" aria-expanded="false">
+          <span class="card-year">1989</span>
+          <span class="card-title">The first museum built for this art</span>
+        </button>
+        <button class="timeline-card" data-card="n2" aria-expanded="false">
+          <span class="card-year">1994</span>
+          <span class="card-title">The web goes public</span>
+        </button>
+        <button class="timeline-card" data-card="n3" aria-expanded="false">
+          <span class="card-year">1996</span>
+          <span class="card-title">Net Art wins its first major award</span>
+        </button>
+        <button class="timeline-card" data-card="n4" aria-expanded="false">
+          <span class="card-year">1997</span>
+          <span class="card-title">Two art worlds, one awkward photo</span>
+        </button>
+      </div>
+
+      <div class="card-detail" id="detail-n1" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="ZKM, Karlsruhe, Germany — opened 1997"></div>
+        <h3>1989 — The first museum built for this art</h3>
+        <p>ZKM opens in Germany — the first major museum in the world built specifically around media art. After 30 years of being the art world's outsider, this is the moment New Media Art gets an actual address.</p>
+      </div>
+      <div class="card-detail" id="detail-n2" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Mosaic web browser, 1993–94"></div>
+        <h3>1994 — The web goes public</h3>
+        <p>Mosaic, the first real web browser, launches — and for the first time, getting online doesn't require a computer science degree. This single moment makes the next wave of art possible.</p>
+      </div>
+      <div class="card-detail" id="detail-n3" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="etoy collective, Digital Hijack, 1996"></div>
+        <h3>1996 — Net Art wins its first major award</h3>
+        <p>Swiss collective etoy wins a top prize at Ars Electronica for <em>Digital Hijack</em> — a stunt that redirected hundreds of thousands of internet users to their site. This is hacking, performance, and art, all at once.</p>
+      </div>
+      <div class="card-detail" id="detail-n4" hidden>
+        <button class="card-close" aria-label="Close">×</button>
+        <div class="detail-image" data-caption="Prix Ars Electronica award ceremony, 1997"></div>
+        <h3>1997 — Two art worlds, one awkward photo</h3>
+        <p>At the same award ceremony, a Net Art collective and a major animation studio director share the stage as fellow winners. Nobody in that photo is quite sure what they have in common — and that's the whole point.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. CLOSING ===== -->
+  <section id="closing" class="section closing">
+    <div class="content-block">
+      <p class="kicker">1997 — and beyond</p>
+      <h2 class="decade-headline">This story didn't end. You're standing inside its sequel.</h2>
+      <div class="prose">
+        <p>Here's the part most people miss: New Media Art never went away after 1997. It just kept doing exactly what it had always done — quietly building things the mainstream wasn't ready for yet.</p>
+        <p>The glitchy, DIY internet art of the late nineties? That's the direct ancestor of meme culture, GIF art, and half of what's on your social media feed right now. The artists experimenting with AI-generated paintings in the 1970s? That conversation is happening again today, just with better tools and a much bigger audience. The telepresence experiments — people connecting live across cities through screens? You did that this morning, probably before breakfast.</p>
+        <p>Every time you've seen "new" technology collide with art — NFTs, AI image generators, VR galleries, interactive installations — you've actually been watching this same 60-year pattern repeat itself. Someone gets curious. The mainstream hesitates. The artists build it anyway.</p>
+        <p>That's the real takeaway here: this was never really a "history" chapter. It's a pattern that's still running, right now, and you're living inside the next chapter of it.</p>
+      </div>
+      <p class="closing-button">So — what will you build before someone tells you it's not allowed?</p>
+      <p class="credits">Based on "A Brief History of the New Media Art World," from <em>Beyond New Media Art</em> by Domenico Quaranta (Link Editions, 2013).</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+/* ===========================================
+   DESIGN TOKENS
+   =========================================== */
+:root {
+  --paper: #F2EFE6;
+  --paper-dim: #E8E3D3;
+  --ink: #1C2826;
+  --ink-soft: #3A4543;
+  --phosphor: #E8A33D;
+  --phosphor-dim: #C98A2C;
+  --phosphor-glow: rgba(232, 163, 61, 0.18);
+  --teal-line: #4A6361;
+
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  --max-width: 720px;
+  --rail-width: 64px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  padding-left: var(--rail-width);
+}
+
+a { color: var(--phosphor-dim); }
+
+/* ===========================================
+   STICKY DECADE RAIL — signature element
+   Styled like a tape-deck / VU meter counter
+   =========================================== */
+.decade-rail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--rail-width);
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0;
+  z-index: 50;
+}
+
+.rail-track {
+  position: relative;
+  width: 2px;
+  flex: 1;
+  background: rgba(242, 239, 230, 0.15);
+  margin-bottom: 8px;
+  border-radius: 2px;
+}
+
+.rail-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--phosphor);
+  border-radius: 2px;
+  transition: height 0.15s linear;
+  box-shadow: 0 0 8px var(--phosphor-glow);
+}
+
+.rail-stops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 32px;
+  bottom: 32px;
+  left: 0;
+  width: var(--rail-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rail-stop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.rail-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(242, 239, 230, 0.35);
+  display: block;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.rail-stop.active .rail-dot {
+  background: var(--phosphor);
+  box-shadow: 0 0 10px var(--phosphor-glow);
+  transform: scale(1.3);
+}
+
+.rail-label {
+  position: absolute;
+  left: 18px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: rgba(242, 239, 230, 0.4);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.rail-stop:hover .rail-label,
+.rail-stop.active .rail-label {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--phosphor);
+}
+
+/* ===========================================
+   LAYOUT
+   =========================================== */
+.section {
+  padding: 120px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-block,
+.hero-inner {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.kicker {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--phosphor-dim);
+  margin: 0 0 16px;
+}
+
+/* ===========================================
+   HERO
+   =========================================== */
+.hero {
+  min-height: 92vh;
+  align-items: center;
+  background:
+    radial-gradient(ellipse 600px 400px at 70% 20%, var(--phosphor-glow), transparent),
+    var(--paper);
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 28px;
+  letter-spacing: -0.01em;
+}
+
+.hero-sub {
+  font-size: 20px;
+  color: var(--ink-soft);
+  max-width: 540px;
+  margin: 0 0 48px;
+}
+
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+}
+
+.scroll-cue svg {
+  animation: bob 1.6s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ===========================================
+   PROSE
+   =========================================== */
+.prose p {
+  margin: 0 0 22px;
+  max-width: 640px;
+}
+
+.prose em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.transition-line {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--phosphor-dim);
+  margin-top: 36px !important;
+}
+
+.decade-headline {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 32px;
+  max-width: 600px;
+}
+
+/* ===========================================
+   DECADE SECTION BACKGROUNDS — subtle tint per era
+   =========================================== */
+.decade[data-decade="sixties"] { background: var(--paper); }
+.decade[data-decade="seventies"] { background: var(--paper-dim); }
+.decade[data-decade="eighties"] { background: var(--paper); }
+.decade[data-decade="nineties"] { background: var(--paper-dim); }
+
+/* ===========================================
+   MINI TIMELINE — "punch card" strip
+   =========================================== */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  margin-top: 48px;
+}
+
+.timeline-card {
+  background: var(--paper);
+  border: none;
+  padding: 24px 16px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: inherit;
+  transition: background 0.15s;
+  min-height: 120px;
+}
+
+.timeline-card:hover,
+.timeline-card[aria-expanded="true"] {
+  background: var(--ink);
+}
+
+.timeline-card:hover .card-year,
+.timeline-card[aria-expanded="true"] .card-year {
+  color: var(--phosphor);
+}
+
+.timeline-card:hover .card-title,
+.timeline-card[aria-expanded="true"] .card-title {
+  color: var(--paper);
+}
+
+.card-year {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--phosphor-dim);
+}
+
+.card-title {
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+/* ===========================================
+   CARD DETAIL PANEL
+   =========================================== */
+.card-detail {
+  margin-top: 24px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  padding: 32px;
+  position: relative;
+  animation: reveal 0.25s ease;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+}
+
+.card-close:hover { color: var(--ink); }
+
+.detail-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background:
+    repeating-linear-gradient(45deg, var(--paper-dim), var(--paper-dim) 8px, var(--paper) 8px, var(--paper) 16px);
+  border: 1px dashed var(--teal-line);
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.detail-image::after {
+  content: attr(data-caption);
+  display: block;
+  width: 100%;
+  background: rgba(28, 40, 38, 0.85);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 11px;
+  padding: 8px 12px;
+  letter-spacing: 0.02em;
+}
+
+.card-detail h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+
+.card-detail p {
+  margin: 0;
+  font-size: 17px;
+}
+
+/* ===========================================
+   CLOSING
+   =========================================== */
+.closing-button {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 700;
+  margin: 48px 0 32px;
+  padding: 28px;
+  border: 1px solid var(--ink);
+  background: var(--phosphor-glow);
+}
+
+.credits {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+@media (max-width: 720px) {
+  :root { --rail-width: 40px; }
+  body { font-size: 16px; }
+  .section { padding: 80px 20px 80px 16px; }
+  .rail-label { display: none; }
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+  .hero-sub { font-size: 17px; }
+}
+
+/* ===========================================
+   FOCUS STATES — accessibility
+   =========================================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--phosphor);
+  outline-offset: 2px;
+}
